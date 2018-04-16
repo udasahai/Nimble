@@ -11,7 +11,7 @@ function cleanup {
 
 
 echo 0 | ./nimble > /dev/null 
-if [ $? -eq 0 ];
+if [ $? -eq 1 ];
     then 
         echo "Prints correct number of stars for zero input..."
     else
@@ -22,7 +22,7 @@ fi
 
 
 echo -2 | ./nimble > /dev/null
-if [ $? -eq 0 ];
+if [ $? -eq 1 ];
     then
         echo "Prints correct number of stars for negative input..."
     else
@@ -31,9 +31,19 @@ if [ $? -eq 0 ];
 fi
 
 
+echo 1 | ./nimble > /dev/null
+if [ $? -eq 0 ];
+    then
+        echo "Prints correct number of stars for input=1 ..."
+    else
+        echo "FAILED test with input=1..."
+        let errors+=1
+fi
+
+
 
 echo 3 | ./nimble > /dev/null
-if [ $? -eq 9 ];
+if [ $? -eq 0 ];
     then
         echo "Prints correct number of stars for input=3 ..."
     else

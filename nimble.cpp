@@ -39,12 +39,18 @@ int starLogic(int row, int length)
 int main(int argc, const char * argv[]) {
 
     int length;
+    int ret; 
     cout << "Please enter the length of the Diagonal\n";
     cin >> length;
     
     if(length<=0)
-    {  cout << "Cannot print Diamond for negative input\n"; return 0; }
+    {  cout << "Cannot print Diamond for negative input\n"; return 1; }
     else
-       return starLogic(1,length); //return the total number of stars in the formation. 
+       ret=starLogic(1,length); //return the total number of stars in the formation. 
+
+   if(ret!=length*length)
+    return 2; 
+
+    return 0;
     
 }
