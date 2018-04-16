@@ -1,0 +1,6 @@
+Please enter the length of the Diagonal
+    *   
+  *   *   
+*   *   *   
+  *   *   
+    *   
