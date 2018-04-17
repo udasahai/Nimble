@@ -75,6 +75,25 @@ if [ $? -eq 0 ];
 fi
 
 
+
+if [[ $(echo 3 | ./nimble | wc -l) -eq 6 ]];
+    then
+        echo "Num lines in expected output as expected..."
+    else
+        echo "Num lines in expected output different from 6..."
+        let errors+=1
+fi
+
+if [[ $(echo 6 | ./nimble | wc -l) -eq 12 ]];
+    then
+        echo "Num lines in expected output as expected..."
+    else
+        echo "Num lines in expected output different from 6..."
+        let errors+=1
+fi
+
+
+
 if [ $errors -eq 0 ]; then
 	echo "Nimble... passes tests"
 	cleanup 0
